@@ -26,7 +26,7 @@ export default async function App() {
   const { nodes, edges } = await fetchData();
 
   return (
-    <main className={styles.main}>
+    <main>
       <ReactFlowProvider initialNodes={nodes} initialEdges={edges}>
         <Flow nodes={nodes} edges={edges} />
       </ReactFlowProvider>

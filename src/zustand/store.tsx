@@ -26,6 +26,7 @@ export type RFState = {
   onConnect: OnConnect;
   setNodes: (nodes: Node[]) => void;
   setEdges: (edges: Edge[]) => void;
+  addStandartNode: () => void;
 };
 
 const useStore = create<RFState>((set, get) => ({
@@ -51,6 +52,28 @@ const useStore = create<RFState>((set, get) => ({
   },
   setEdges: (edges: Edge[]) => {
     set({ edges });
+  },
+  addStandartNode: () => {
+    const nodes = get().nodes;
+    const standartCount = nodes.filter(
+      (node) => node.type === "standart"
+    ).length;
+    const spacing = 250;
+    const newNode = {
+      id: `standartNode_${+new Date()}`,
+      type: "standart",
+      data: {
+        value: "",
+      },
+      style: {},
+      position: {
+        x: standartCount * spacing, // Position next to the previous node on the x-axis
+        y: 100, // Fixed y position, adjust as needed
+      },
+    };
+    set({
+      nodes: [...nodes, newNode],
+    });
   },
 }));
 
