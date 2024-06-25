@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "reactflow": "^11.9.4",
     "next": "13.5.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "reactflow": "^11.9.4",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@types/node": "^20",

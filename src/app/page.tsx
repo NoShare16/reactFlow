@@ -4,6 +4,8 @@ import { Edge, Node, Position, ReactFlowProvider } from "reactflow";
 
 import styles from "./page.module.css";
 import Flow from "../components/Flow";
+import initialNodes from "../components/nodes";
+import initialEdges from "../components/edges";
 
 const nodeSize = {
   width: 100,
@@ -11,12 +13,6 @@ const nodeSize = {
 };
 
 // this example uses some v12 features that are not released yet
-const initialNodes: Node[] = [];
-
-const initialEdges: Edge[] = [
-  { id: "e1-2", source: "1", target: "2", animated: true },
-  { id: "e1-3", source: "1", target: "3", animated: true },
-];
 
 async function fetchData(): Promise<{ nodes: Node[]; edges: Edge[] }> {
   return new Promise((resolve) => {
